@@ -1,225 +1,299 @@
 @import "/src/css/animations.css";
 @import "/src/css/fonts.css";
 
-td, th {
-     padding: 20px;
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+@-webkit-keyframes jackInTheBox {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes jackInTheBox {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+td,
+th {
+  padding: 20px;
 }
 .fraunces {
-     font-family: 'Fraunces', Arial, Helvetica, sans-serif;
-     font-weight: 400;
+  font-family: "Fraunces", Arial, Helvetica, sans-serif;
+  font-weight: 400;
 }
 .GeneralInfo-Table-Heading {
-     font-size: x-large;
+  font-size: x-large;
 }
 .GeneralInfo-Table-Text {
-     font-size: large;
-     vertical-align: text-top;
-}
-.show {
-     opacity: 1 !important;
-}   
-
-.stretch {
-     opacity: 0;
-     animation: rubberBand;
-     animation-duration: 1s;
-}
-.bounce {
-     opacity: 0;
-     animation: bounce;
-     animation-duration: 1s;
-}
-.backInUp {
-     opacity: 0;
-     transition: all 1s;
-     animation: backInUp;
-     animation-duration: 3s;
-}
-.slideInLeft {
-     opacity: 0;
-     transition: all 1s;
-     animation: slideInLeft;
-     animation-duration: 3s;
-}
-.zoomInUp {
-     opacity: 0;
-     transition: all 1s;
-     animation: zoomInUp;
-     animation-duration: 3s;
+  font-size: large;
+  vertical-align: text-top;
 }
 #ContentWrapper {
-     max-width: 100%;
-     overflow-x: hidden;
-     overflow-y: hidden !important;
-     margin: 0;
-     padding: 0;
-} 
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden !important;
+  margin: 0;
+  padding: 0;
+}
 #WelcomeSplash {
-     background-image: url("/src/assets/WelcomePageImage.jpg");
-     background-attachment: fixed;
-     background-repeat: no-repeat;
-     background-size: cover;
-     width: 100vw;
-     height: 100vh;
+  background-image: url("/src/assets/WelcomePageImage.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 #WelcomeHeading {
-     color: #fffdc3;
-     font-weight: 500;
-     font-size: 12vh;
-     text-shadow: 5px 5px #8e6944;
-     animation: rubberBand;
-     animation-duration: 2s;
+  color: #fffdc3;
+  font-weight: 500;
+  font-size: 12vh;
+  text-shadow: 5px 5px #8e6944;
+  animation: rubberBand;
+  animation-duration: 2s;
 }
 #WelcomeSubHeading {
-     color: white;
-     font-weight: 500;
-     font-size: 5vh;
-     animation: jackInTheBox;
-     animation-duration: 2s;
+  color: white;
+  font-weight: 500;
+  font-size: 5vh;
+  animation: jackInTheBox;
+  animation-duration: 2s;
 }
 #GeneralInfo {
-     background-color: #D5D2CA;
-     width: 100vw;
-     height: fit-content;
-     padding-bottom: 10vh;
-     text-align: left;
-     align-items: center;
+  background-color: #d5d2ca;
+  width: 100vw;
+  height: fit-content;
+  padding-bottom: 10vh;
+  text-align: left;
+  align-items: center;
 }
 #GeneralInfo-Heading {
-     font-size: xxx-large;
-     padding-top: 3vw;
-     padding-bottom: 5vh;
-     text-align: center;
+  font-size: xxx-large;
+  padding-top: 3vw;
+  padding-bottom: 5vh;
+  text-align: center;
 }
 #GeneralInfo-Table {
-     padding: 10vw;
-     margin-left: auto;
-     margin-right: auto;
+  padding: 10vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 #GeneralInfoMobile {
-     display: none;
+  display: none;
 }
 #TypesOfCookies {
-     width: 100vw;
-     background-color: #FEFAF0;
-     background-size: cover;
-     height:max-content;
-     display: grid;
-     align-items: center;
+  width: 100vw;
+  background-color: #fefaf0;
+  background-size: cover;
+  height: max-content;
+  display: grid;
+  align-items: center;
 }
 
 #TypesOfCookies-Content {
-     float: right;
-     width: 100vw;
-     height: fit-content;
+  float: right;
+  width: 100vw;
+  height: fit-content;
 }
 #TypesOfCookies-Content-Heading {
-     text-align: center;
-     padding-top: 5vh;
-     font-size: xx-large;
+  text-align: center;
+  padding-top: 5vh;
+  font-size: xx-large;
 }
 #TypesOfCookies-Image TypesOfCookies-Content-Heading {
-     float: left;
-     width: 25vw;
-     height: inherit;
-     background-image: url('/src/assets/CookieTypesImage.jpg');
-     background-position: center;
-     background-size: cover;
+  float: left;
+  width: 25vw;
+  height: inherit;
+  background-image: url("/src/assets/CookieTypesImage.jpg");
+  background-position: center;
+  background-size: cover;
 }
 #TypesOfCookies-Content-Subheading {
-     text-align: center;
-     font-size: large;
+  text-align: center;
+  font-size: large;
 }
 #TypesOfCookies-Content-Table-Heading {
-     font-size: large;
+  font-size: large;
 }
 #TypesOfCookies-Content-Table-Text {
-     vertical-align: text-top;
+  vertical-align: text-top;
 }
 #TypesOfCookiesMobile {
-     display: none;
+  display: none;
 }
 @media screen and (max-width: 432px) {
-     html {
-          overflow-x: hidden;
-     }
-     #WelcomeSplash {
-          background-image: url("/src/assets/WelcomePageImageMobile.jpg");
-          height: 100vh;
-     }
-     #WelcomeHeading {
-          font-size: 7vh;
-     }
-     #WelcomeSubHeading {
-          font-size: 3vh;
-     }
-     #GeneralInfo {
-          display: none;
-     }
-     #GeneralInfoMobile {
-          display: grid;
-          background-color: #D5D2CA;
-          width: 100vw;
-          height: fit-content;
-     }
-     #GeneralInfoMobile-Heading {
-          text-align: center;
-          padding-top: 5vw;
-          font-size: xx-large;
-     }
-     .mobileCookieHeading {
-          font-size: x-large;
-          text-align: center;
-          padding-top: 3vw;
-          padding-bottom: 3vw;
-     }
-     .mobileCookieText {
-          font-size: large;
-          text-align: center;
-          padding-top: 3vw;
-          padding-bottom: 3vw;
-     }
-     #TypesOfCookies {
-          display: none;
-     }
-     #TypesOfCookiesMobile {
-          background-color: #FEFAF0;
-          display: grid;
-     }
-     #TypesOfCookiesMobileHead-Head {
-          font-family: 'Fraunces';
-          font-weight: 600;
-          font-size: 5vh;
-          padding-top: 5vh;
-          padding: 2vh;
-          text-align: center;
-     }
-     #TypesOfCookiesMobileHead-SubHead {
-          font-family: 'Fraunces';
-          font-weight: 400;
-          font-size: 3vh;
-          padding: 2vh;
-          text-align: center;
-     }
-     #TypesOfCookiesMobileContent-HeadNum {
-          font-family: 'Fraunces';
-          font-weight: 400;
-          font-size: 3vh;
-          padding: 2vh;
-          text-align: center;
-     }
-     #TypesOfCookiesMobileContent-HeadText {
-          font-family: 'Fraunces';
-          font-weight: 400;
-          font-size: 3vh;
-          padding: 2vh;
-          text-align: center;
-     }
-     #TypesOfCookiesMobileContent-Text {
-          font-family: 'Fraunces';
-          font-weight: 400;
-          font-size: 2vh;
-          padding: 2vh;
-          text-align: center;
-     }
+  html {
+    overflow-x: hidden;
+  }
+  #WelcomeSplash {
+    background-image: url("/src/assets/WelcomePageImageMobile.jpg");
+    height: 100vh;
+  }
+  #WelcomeHeading {
+    font-size: 7vh;
+  }
+  #WelcomeSubHeading {
+    font-size: 3vh;
+  }
+  #GeneralInfo {
+    display: none;
+  }
+  #GeneralInfoMobile {
+    display: grid;
+    background-color: #d5d2ca;
+    width: 100vw;
+    height: fit-content;
+  }
+  #GeneralInfoMobile-Heading {
+    text-align: center;
+    padding-top: 5vw;
+    font-size: xx-large;
+  }
+  .mobileCookieHeading {
+    font-size: x-large;
+    text-align: center;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  .mobileCookieText {
+    font-size: large;
+    text-align: center;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  #TypesOfCookies {
+    display: none;
+  }
+  #TypesOfCookiesMobile {
+    background-color: #fefaf0;
+    display: grid;
+  }
+  #TypesOfCookiesMobileHead-Head {
+    font-family: "Fraunces";
+    font-weight: 600;
+    font-size: 5vh;
+    padding-top: 5vh;
+    padding: 2vh;
+    text-align: center;
+  }
+  #TypesOfCookiesMobileHead-SubHead {
+    font-family: "Fraunces";
+    font-weight: 400;
+    font-size: 3vh;
+    padding: 2vh;
+    text-align: center;
+  }
+  #TypesOfCookiesMobileContent-HeadNum {
+    font-family: "Fraunces";
+    font-weight: 400;
+    font-size: 3vh;
+    padding: 2vh;
+    text-align: center;
+  }
+  #TypesOfCookiesMobileContent-HeadText {
+    font-family: "Fraunces";
+    font-weight: 400;
+    font-size: 3vh;
+    padding: 2vh;
+    text-align: center;
+  }
+  #TypesOfCookiesMobileContent-Text {
+    font-family: "Fraunces";
+    font-weight: 400;
+    font-size: 2vh;
+    padding: 2vh;
+    text-align: center;
+  }
 }
